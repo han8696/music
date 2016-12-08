@@ -1,0 +1,385 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  position: relative;
+  font-family: "微软雅黑","宋体"; }
+
+a {
+  text-decoration: none; }
+
+img {
+  border: 0; }
+
+input {
+  outline: none;
+  border: none; }
+
+html {
+  font-size: 100px; }
+
+body {
+  font-size: 16px;
+  background-image: url(../img/p.png);
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: 42.66667px; } }
+
+@media screen and (min-width: 360px) {
+  html {
+    font-size: 48px; } }
+
+@media screen and (min-width: 375px) {
+  html {
+    font-size: 50px; } }
+
+@media screen and (min-width: 384px) {
+  html {
+    font-size: 51.2px; } }
+
+@media screen and (min-width: 412px) {
+  html {
+    font-size: 54.93333px; } }
+
+@media screen and (min-width: 414px) {
+  html {
+    font-size: 55.2px; } }
+
+@media screen and (min-width: 600px) {
+  html {
+    font-size: 80px; } }
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 102.4px; } }
+
+@media screen and (min-width: 800px) {
+  html {
+    font-size: 106.66667px; } }
+
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 136.53333px; } }
+
+@font-face {
+  font-family: 'iconfont';
+  src: url("//at.alicdn.com/t/font_ugt1wmzs4e31h5mi.eot");
+  src: url("//at.alicdn.com/t/font_ugt1wmzs4e31h5mi.eot") format("embedded-opentype"), url("//at.alicdn.com/t/font_ugt1wmzs4e31h5mi.woff") format("woff"), url("//at.alicdn.com/t/font_ugt1wmzs4e31h5mi.ttf") format("truetype"), url("//at.alicdn.com/t/font_ugt1wmzs4e31h5mi.svg#iconfont") format("svg"); }
+
+/*header*/
+.header {
+  width: 100%;
+  height: 0.7rem;
+  margin: 0.4rem auto 0 auto;
+  padding: 0 0.44rem; }
+  .header .nametitle {
+    width: 100%;
+    height: 100%; }
+    .header .nametitle .left, .header .nametitle .right {
+      width: 0.7rem;
+      height: 0.7rem;
+      border: 0.01rem solid #2e2e2e;
+      text-align: center;
+      line-height: 0.7rem;
+      color: #6c6c6c;
+      font-size: 0.3rem; }
+    .header .nametitle .left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      font-family: 'iconfont'; }
+    .header .nametitle .right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      font-family: 'iconfont'; }
+    .header .nametitle #name {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      line-height: 0.7rem;
+      color: #d0d0d0;
+      font-size: 0.28rem; }
+
+#author {
+  width: 100%;
+  height: 0.3rem;
+  margin: 0.4rem auto 0 auto;
+  padding: 0 0.6rem;
+  text-align: center;
+  line-height: 0.3rem;
+  color: #d0d0d0;
+  font-size: 0.2rem; }
+
+#catory {
+  width: 100%;
+  height: 0.36rem;
+  margin: 0.2rem auto;
+  padding: 0 0.6rem; }
+  #catory #catorybox {
+    margin: 0 auto;
+    text-align: center; }
+    #catory #catorybox a {
+      display: inline-block;
+      width: auto;
+      height: auto;
+      border: 0.01rem solid #4d4d4d;
+      margin-left: 0.24rem;
+      padding: 0 0.1rem;
+      text-align: center;
+      line-height: 0.36rem;
+      color: #d0d0d0;
+      font-size: 0.2rem;
+      border-radius: 15%; }
+    #catory #catorybox a:nth-child(3) {
+      color: #4a4a4a;
+      border: 0.01rem solid #4a4a4a; }
+
+#progressbox {
+  width: 100%;
+  height: 0.5rem;
+  margin: 1rem auto 0 auto;
+  padding: 0 2.667%; }
+  #progressbox #mutebox {
+    width: 0.5rem;
+    height: 0.5rem;
+    position: absolute;
+    top: -140%;
+    right: 5%;
+    z-index: 10; }
+    #progressbox #mutebox #mute {
+      width: 100%;
+      height: 100%;
+      color: #565656;
+      font-size: 0.5rem;
+      font-family: 'iconfont'; }
+    #progressbox #mutebox #vol {
+      position: absolute;
+      top: -256%;
+      right: 37%;
+      width: 0.06rem;
+      height: 1.5rem;
+      background: #262626;
+      z-index: -1;
+      overflow: hidden;
+      display: none; }
+      #progressbox #mutebox #vol #vi {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: #a61d21; }
+  #progressbox #danmu {
+    position: absolute;
+    top: -160%;
+    left: 5%;
+    z-index: 10;
+    color: #565656;
+    font-size: 0.8rem;
+    font-family: 'iconfont'; }
+  #progressbox #current, #progressbox #duration {
+    width: 11%;
+    height: 0.5rem;
+    float: left;
+    padding: 0 1%;
+    text-align: left;
+    line-height: 0.5rem;
+    color: #d0d0d0;
+    font-size: 0.2rem; }
+  #progressbox #duration {
+    float: right; }
+  #progressbox #progress {
+    width: 74%;
+    height: 0.06rem;
+    background: #262626;
+    float: left;
+    margin: 0.19rem 2% 0 2%;
+    position: relative;
+    overflow: hidden; }
+    #progressbox #progress #p-v {
+      width: 100%;
+      height: 0.06rem;
+      background: #a61d21;
+      position: absolute;
+      top: 0;
+      left: -100%; }
+
+.playlist {
+  width: 100%;
+  height: 1.1rem;
+  text-align: center;
+  line-height: 1.1rem;
+  padding: 0 3.3333%;
+  margin-bottom: 2%; }
+  .playlist #prve, .playlist #next {
+    width: 1.1rem;
+    height: 1.1rem;
+    display: inline-block;
+    border-radius: 50%;
+    font-family: 'iconfont';
+    text-align: center;
+    font-size: 0.8rem;
+    color: #565656;
+    font-weight: blod; }
+  .playlist #next {
+    transform: rotate(180deg);
+    line-height: 1.15rem; }
+  .playlist #prve {
+    line-height: 1.1rem; }
+  .playlist #play {
+    width: 1.1rem;
+    height: 1.1rem;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0 7%;
+    color: #565656;
+    font-family: 'iconfont';
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.1rem; }
+
+#cerpart {
+  width: 100%;
+  height: auto;
+  margin: 1.2rem auto 0.2rem auto; }
+  #cerpart div {
+    width: 100%;
+    height: 0.8rem;
+    text-align: center;
+    font-size: 0.3rem;
+    line-height: 0.62rem;
+    color: #fff; }
+  #cerpart div:nth-child(4), #cerpart div:nth-child(5) {
+    color: #a51d21; }
+  #cerpart div:nth-child(3), #cerpart div:nth-child(6) {
+    color: #cbcbcb; }
+  #cerpart div:nth-child(2), #cerpart div:nth-child(7) {
+    color: #828282; }
+  #cerpart div:nth-child(1), #cerpart div:nth-child(8) {
+    color: #737373; }
+
+.bottombut {
+  width: 100%;
+  height: auto;
+  margin: 0 3.3333%; }
+  .bottombut div {
+    width: 18.7%;
+    height: 1.1rem;
+    float: left;
+    font-size: 0.6rem;
+    color: #565656;
+    text-align: center;
+    line-height: 1.1rem;
+    font-family: 'iconfont';
+    font-weight: blod; }
+  .bottombut div:nth-child(1) {
+    line-height: 1rem; }
+  .bottombut div:nth-child(3) {
+    line-height: 0.8rem; }
+
+.danchu {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 0 auto;
+  z-Index: 1000;
+  display: none; }
+
+.closed {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-Index: 101;
+  height: 1.3rem;
+  line-height: 1.3rem;
+  background: #1a1e26;
+  color: #fff;
+  font-size: 0.4rem;
+  text-align: center; }
+
+.gecibox {
+  position: fixed;
+  left: 0;
+  bottom: 1.2rem;
+  width: 100%;
+  z-Index: 100;
+  padding: 0 4.44%;
+  background: #1a2029; }
+  .gecibox .top {
+    width: 100%;
+    height: 1rem;
+    border-bottom: 1px solid #60646b; }
+    .gecibox .top .font {
+      width: 12.89%;
+      height: 100%;
+      float: left;
+      font-size: 0.5rem;
+      color: #565656;
+      text-align: center;
+      line-height: 1rem;
+      font-family: 'iconfont'; }
+    .gecibox .top .palycicle {
+      width: 48.44%;
+      height: 100%;
+      float: left;
+      font-size: 0.3rem;
+      color: #fff;
+      text-align: left;
+      line-height: 1rem; }
+  .gecibox #music-lists {
+    width: 100%;
+    posiition: relative; }
+    .gecibox #music-lists .active .nameg, .gecibox #music-lists .active .heng, .gecibox #music-lists .active .authorg {
+      color: #31c27c; }
+    .gecibox #music-lists li {
+      width: 100%;
+      height: auto;
+      height: 1rem;
+      border-bottom: 1px solid #333942; }
+      .gecibox #music-lists li .nameg {
+        display: inline-block;
+        font-size: 0.32rem;
+        color: #fff;
+        height: 1rem;
+        line-height: 1rem; }
+      .gecibox #music-lists li .heng {
+        display: inline-block;
+        color: #fff;
+        height: 1rem;
+        line-height: 1rem;
+        color: #8c8f94; }
+      .gecibox #music-lists li .authorg {
+        display: inline-block;
+        font-size: 0.24rem;
+        color: #8c8f94; }
+      .gecibox #music-lists li .fontbox {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: 0;
+        height: 1rem;
+        width: 25.78%; }
+        .gecibox #music-lists li .fontbox .font {
+          float: left;
+          height: 1rem;
+          width: 50%;
+          text-align: center;
+          line-height: 1rem;
+          font-family: 'iconfont';
+          font-size: 0.5rem;
+          color: #565656; }

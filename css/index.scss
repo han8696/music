@@ -1,0 +1,403 @@
+*{
+    margin:0;
+	padding:0;
+	list-style: none;
+	box-sizing:border-box;
+	position:relative;
+	font-family: "微软雅黑","宋体";
+}
+a{
+	text-decoration: none;
+}
+img{
+	border:0;
+}
+input{
+   outline: none;
+	border:none;
+}
+html{
+	font-size:100px;
+}
+body{
+	font-size:16px;
+	background-image:url(../img/p.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+$device-lists:320px,360px,375px,384px,412px,414px,600px,768px,800px,1024px;
+$design-width:750px;
+@each $w in $device-lists{
+	@media screen and (min-width:#{$w}){
+	    html{
+	    font-size:100px*$w/$design-width;
+	    }
+	}
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_ugt1wmzs4e31h5mi.eot');
+  src: url('//at.alicdn.com/t/font_ugt1wmzs4e31h5mi.eot') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_ugt1wmzs4e31h5mi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_ugt1wmzs4e31h5mi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_ugt1wmzs4e31h5mi.svg#iconfont') format('svg');
+}
+/*header*/
+.header{
+    width:100%;
+    height:0.7rem;
+    margin: 0.4rem auto 0 auto;
+    padding:0 0.44rem;
+    .nametitle{
+        width: 100%;
+        height: 100%;
+        .left,.right{
+            width: 0.7rem;
+            height: 0.7rem;
+            border: 0.01rem solid #2e2e2e;
+            text-align:center;
+            line-height: 0.7rem;
+            color: #6c6c6c;
+            font-size: 0.3rem;
+        }
+        .left{
+            position: absolute;
+            top:0;
+            left:0;
+            z-index: 10;
+            font-family: 'iconfont'; 
+        }
+        .right{
+            position: absolute;
+            top:0;
+            right:0;
+            z-index: 10;
+            font-family: 'iconfont'; 
+        }
+        #name{
+            width: 100%;
+            height: 100%;
+            text-align:center;
+            line-height: 0.7rem;
+            color: #d0d0d0;
+            font-size: 0.28rem;
+        }
+    }
+}
+#author{
+    width:100%;
+    height:0.3rem;
+    margin: 0.4rem auto 0 auto;
+    padding:0 0.6rem;
+    text-align:center;
+    line-height: 0.3rem;
+    color: #d0d0d0;
+    font-size: 0.2rem;
+}
+#catory{
+    width:100%;
+    height:0.36rem;
+    margin: 0.2rem auto;
+    padding:0 0.6rem;
+    #catorybox{
+        margin:0 auto;
+        text-align:center;
+        a{
+            display: inline-block;
+            width: auto;
+            height: auto;
+            border:0.01rem solid #4d4d4d;
+            margin-left: 0.24rem;
+            padding: 0 0.1rem;
+            text-align:center;
+            line-height: 0.36rem;
+            color: #d0d0d0;
+            font-size: 0.2rem;
+            border-radius: 15%;
+        }
+        a:nth-child(3){
+            color:#4a4a4a;
+            border:0.01rem solid #4a4a4a;
+        }
+    }
+}
+#progressbox{
+    width: 100%;
+    height: 0.5rem;
+    margin: 1rem auto 0 auto;
+    padding:0 2.667%;
+    #mutebox{
+       width:0.5rem;
+       height:0.5rem;
+       position:absolute;
+       top:-140%;
+       right:5%;
+       z-index:10;
+       #mute{
+          width:100%;
+          height:100%;
+          color:#565656;
+          font-size: 0.5rem;
+          font-family: 'iconfont';
+       }
+       #vol{
+          position:absolute;
+          top:-256%;
+          right:37%;
+          width: 0.06rem;
+          height:1.5rem;
+          background: #262626;
+          z-index:-1;
+          overflow:hidden;
+          display:none;
+          #vi{
+              position:absolute;
+              top:100%;
+              right:0;
+              width: 100%;
+              height:100%;
+              background: #a61d21;
+          }
+       }
+    }
+    #danmu{
+      position:absolute;
+      top:-160%;
+      left:5%;
+      z-index:10;
+      color:#565656;
+      font-size: 0.8rem;
+       font-family: 'iconfont';
+    }
+    #current,#duration{
+        width: 11%;
+        height: 0.5rem;
+        float: left;
+        padding:0 1%;
+        text-align: left;
+        line-height: 0.5rem;
+        color: #d0d0d0;
+        font-size: 0.2rem;
+    }
+    #duration{
+        float: right;
+    }
+    #progress{
+        width: 74%;
+        height: 0.06rem;
+        background: #262626;
+        float: left;
+        margin: 0.19rem 2% 0 2%;
+        position:relative;
+        overflow:hidden;
+        #p-v{
+            width:100%;
+            height:0.06rem;
+            background: #a61d21;
+            position:absolute;
+            top:0;
+            left:-100%;
+        }
+    }
+}
+.playlist{
+    width:100%;
+    height:1.1rem;
+    text-align: center;
+    line-height: 1.1rem;
+    padding:0 3.3333%;
+    margin-bottom:2%;
+    #prve,#next{
+        width: 1.1rem;
+        height: 1.1rem;
+        display: inline-block;
+        border-radius: 50%;
+        font-family: 'iconfont';
+        text-align:center;
+        font-size: 0.8rem;
+        color:#565656;
+        font-weight:blod;
+    }
+    #next{
+       transform: rotate(180deg);
+        line-height: 1.15rem;
+    }
+    #prve{
+        line-height: 1.1rem;
+    }
+    #play{
+        width: 1.1rem;
+        height:1.1rem;
+        display: inline-block;
+        border-radius: 50%;
+        margin:0 7%;
+        color:#565656;
+        font-family: 'iconfont';
+        text-align:center;
+        font-size: 1.1rem;
+        line-height: 1.1rem;
+    }
+}
+//cerpart
+#cerpart{
+  width:100%;
+  height:auto;
+  margin:1.2rem auto 0.2rem auto;
+  div{
+    width:100%;
+    height:0.8rem;
+    text-align:center;
+    font-size: 0.3rem;
+    line-height: 0.62rem;
+    color:#fff;
+  }
+  div:nth-child(4),div:nth-child(5){
+    color:#a51d21;
+  }
+  div:nth-child(3),div:nth-child(6){
+    color:#cbcbcb;
+  }
+  div:nth-child(2),div:nth-child(7){
+    color:#828282;
+  }
+  div:nth-child(1),div:nth-child(8){
+    color:#737373;
+  }
+}
+//cerpart
+.bottombut{
+    width: 100%;
+    height: auto;
+    margin:0 3.3333%;
+    div{
+        width: 18.7%;
+        height: 1.1rem;
+        float: left;
+        font-size: 0.6rem;
+        color:#565656;
+        text-align: center;
+        line-height: 1.1rem;
+        font-family: 'iconfont';
+        font-weight:blod;
+    }
+    div:nth-child(1){
+       line-height: 1rem;
+    }
+    div:nth-child(3){
+       line-height: 0.8rem;
+    }
+}
+.danchu{
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin:0 auto;
+    z-Index:1000;
+    display:none;
+}
+.closed{
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    z-Index:101;
+    height:1.3rem;
+    line-height:1.3rem;
+    background:#1a1e26;
+    color:#fff;
+    font-size:0.4rem;
+    text-align:center;
+}
+.gecibox{
+    position:fixed;
+    left:0;
+    bottom:1.2rem;
+    width:100%;
+    z-Index:100;
+    padding:0 4.44%;
+    background:#1a2029;
+    .top{
+       width:100%;
+       height:1rem;
+       border-bottom:1px solid #60646b;
+       .font{
+           width:12.89%;
+           height:100%;
+           float:left;
+           font-size: 0.5rem;
+           color:#565656;
+           text-align: center;
+            line-height: 1rem;
+            font-family: 'iconfont';
+       }
+       .palycicle{
+           width:48.44%;
+           height:100%;
+           float:left;
+           font-size: 0.3rem;
+           color:#fff;
+           text-align: left;
+           line-height: 1rem;
+       }
+    }
+    #music-lists{
+        width:100%;
+        posiition:relative;
+
+        .active{
+            .nameg,.heng,.authorg{
+               color:#31c27c;
+           }
+        }
+        li{
+            width:100%;
+            height:auto;
+            height:1rem;
+            border-bottom:1px solid #333942;
+            .nameg{
+                display:inline-block;
+                font-size:0.32rem;
+                color:#fff;
+                height:1rem;
+                line-height:1rem;
+            }
+            .heng{
+                 display:inline-block;
+                color:#fff;
+                height:1rem;
+                line-height:1rem;
+                color:#8c8f94;
+            }
+            .authorg{
+                display:inline-block;
+                font-size:0.24rem;
+                color:#8c8f94;
+            }
+            .fontbox{
+                 position:absolute;
+                 top:0;
+                 bottom:0;
+                 right:0;
+                 margin:0;
+                 height:1rem;
+                 width:25.78%;
+                .font{
+                  float:left;
+                  height:1rem;
+                  width:50%;
+                  text-align:center;
+                  line-height:1rem;
+                  font-family: 'iconfont';
+                  font-size: 0.5rem;
+                  color:#565656;
+                }
+            }
+        }
+    }
+    
+}
